@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils'
 import ModeToggle from './mode-toggle'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Destinations', href: '/destinations' },
+    { name: 'Hotels', href: '/hotels' },
+    { name: 'Flights', href: '/flights' },
+    { name: 'Bookings', href: '/bookings' },
 ]
 
 export const HeroHeader = () => {
@@ -50,12 +50,12 @@ export const HeroHeader = () => {
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
+                            <ul className="flex gap-8 text-lg">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                            className=" block duration-300 hover:underline underline-offset-4 transition-all">
                                             <span>{item.name}</span>
                                         </Link>
                                     </li>
