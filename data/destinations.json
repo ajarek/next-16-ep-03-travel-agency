@@ -1,0 +1,308 @@
+{
+  "trips": [
+    {
+      "id": 1,
+      "cityName": "London",
+      "country": "United Kingdom",
+      "image": "/destinations/London.jpg",
+      "description": "The capital of capitals, blending royal history with world-class culture and modern innovation.",
+      "durationDays": 5,
+      "priceUSD": 1850,
+      "startDate": "2025-05-15",
+      "endDate": "2025-05-20",
+      "transportType": "Flight",
+      "rating": 4.8,
+      "highlights": [
+        "Buckingham Palace",
+        "British Museum",
+        "West End Show",
+        "Tower of London"
+      ]
+    },
+    {
+      "id": 2,
+      "cityName": "Paris",
+      "country": "France",
+      "image": "/destinations/Eiffel.jpg",
+      "description": "The City of Light, offering romantic ambiance, unparalleled art, and exquisite cuisine.",
+      "durationDays": 4,
+      "priceUSD": 1600,
+      "startDate": "2025-06-10",
+      "endDate": "2025-06-14",
+      "transportType": "Flight",
+      "rating": 4.7,
+      "highlights": [
+        "Eiffel Tower",
+        "Louvre Museum",
+        "Seine River Cruise",
+        "Notre-Dame Cathedral"
+      ]
+    },
+    {
+      "id": 3,
+      "cityName": "Tokyo",
+      "country": "Japan",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A dazzling metropolis where cutting-edge technology and ancient traditions seamlessly coexist.",
+      "durationDays": 6,
+      "priceUSD": 2200,
+      "startDate": "2025-04-01",
+      "endDate": "2025-04-07",
+      "transportType": "Flight",
+      "rating": 4.9,
+      "highlights": [
+        "Senso-ji Temple",
+        "Shibuya Crossing",
+        "Tsukiji Outer Market",
+        "Imperial Palace East Gardens"
+      ]
+    },
+    {
+      "id": 4,
+      "cityName": "Madrid",
+      "country": "Spain",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A vibrant Spanish capital known for its elegant boulevards, expansive parks, and world-class art museums.",
+      "durationDays": 4,
+      "priceUSD": 1350,
+      "startDate": "2025-09-12",
+      "endDate": "2025-09-16",
+      "transportType": "Flight",
+      "rating": 4.6,
+      "highlights": [
+        "Prado Museum",
+        "Royal Palace",
+        "Retiro Park",
+        "Puerta del Sol"
+      ]
+    },
+    {
+      "id": 5,
+      "cityName": "Rome",
+      "country": "Italy",
+      "image": "/destinations/Tokio.jpg",
+      "description": "The Eternal City, home to ancient wonders, breathtaking art, and vibrant piazzas.",
+      "durationDays": 4,
+      "priceUSD": 1550,
+      "startDate": "2025-07-05",
+      "endDate": "2025-07-09",
+      "transportType": "Flight",
+      "rating": 4.8,
+      "highlights": [
+        "Colosseum",
+        "Vatican City",
+        "Trevi Fountain",
+        "Roman Forum"
+      ]
+    },
+    {
+      "id": 6,
+      "cityName": "Barcelona",
+      "country": "Spain",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A colorful coastal city famed for its unique Gaudí architecture and lively beach culture.",
+      "durationDays": 5,
+      "priceUSD": 1700,
+      "startDate": "2025-06-22",
+      "endDate": "2025-06-27",
+      "transportType": "Flight",
+      "rating": 4.7,
+      "highlights": [
+        "Sagrada Familia",
+        "Park Güell",
+        "Gothic Quarter",
+        "La Boqueria Market"
+      ]
+    },
+    {
+      "id": 7,
+      "cityName": "Amsterdam",
+      "country": "Netherlands",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A charming city of canals, cycling paths, and iconic museums filled with artistic masterpieces.",
+      "durationDays": 3,
+      "priceUSD": 1250,
+      "startDate": "2025-08-08",
+      "endDate": "2025-08-11",
+      "transportType": "Flight",
+      "rating": 4.5,
+      "highlights": [
+        "Anne Frank House",
+        "Van Gogh Museum",
+        "Canal Cruise",
+        "Rijksmuseum"
+      ]
+    },
+    {
+      "id": 8,
+      "cityName": "New York City",
+      "country": "USA",
+      "image": "/destinations/Tokio.jpg",
+      "description": "The bustling Big Apple, a global hub of culture, finance, and entertainment that never sleeps.",
+      "durationDays": 5,
+      "priceUSD": 1950,
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-06",
+      "transportType": "Flight",
+      "rating": 4.7,
+      "highlights": [
+        "Central Park",
+        "Statue of Liberty",
+        "Broadway Show",
+        "Empire State Building"
+      ]
+    },
+    {
+      "id": 9,
+      "cityName": "Cape Town",
+      "country": "South Africa",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A stunning coastal city nestled between the iconic Table Mountain and the sea.",
+      "durationDays": 7,
+      "priceUSD": 2500,
+      "startDate": "2025-01-20",
+      "endDate": "2025-01-27",
+      "transportType": "Flight",
+      "rating": 4.9,
+      "highlights": [
+        "Table Mountain",
+        "Cape Point",
+        "Kalk Bay",
+        "Penguin Colony"
+      ]
+    },
+    {
+      "id": 10,
+      "cityName": "Bangkok",
+      "country": "Thailand",
+      "image": "/destinations/Tokio.jpg",
+      "description": "Thailand's vibrant capital, famous for its ornate temples, bustling street life, and incredible food.",
+      "durationDays": 5,
+      "priceUSD": 1100,
+      "startDate": "2025-11-15",
+      "endDate": "2025-11-20",
+      "transportType": "Flight",
+      "rating": 4.6,
+      "highlights": [
+        "Wat Arun",
+        "Grand Palace",
+        "Floating Market",
+        "Street Food Tour"
+      ]
+    },
+    {
+      "id": 11,
+      "cityName": "Dubai",
+      "country": "UAE",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A ultramodern desert metropolis known for its luxury shopping, futuristic architecture, and vibrant nightlife.",
+      "durationDays": 4,
+      "priceUSD": 1800,
+      "startDate": "2025-02-10",
+      "endDate": "2025-02-14",
+      "transportType": "Flight",
+      "rating": 4.5,
+      "highlights": [
+        "Burj Khalifa",
+        "The Dubai Mall",
+        "Desert Safari",
+        "Palm Jumeirah"
+      ]
+    },
+    {
+      "id": 12,
+      "cityName": "Singapore",
+      "country": "Singapore",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A sleek city-state and garden city, celebrated for its cleanliness, diversity, and futuristic Supertree structures.",
+      "durationDays": 4,
+      "priceUSD": 1650,
+      "startDate": "2025-03-18",
+      "endDate": "2025-03-22",
+      "transportType": "Flight",
+      "rating": 4.7,
+      "highlights": [
+        "Gardens by the Bay",
+        "Marina Bay Sands",
+        "Orchard Road",
+        "Sentosa Island"
+      ]
+    },
+    {
+      "id": 13,
+      "cityName": "Sydney",
+      "country": "Australia",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A stunning harbor city home to iconic landmarks, beautiful beaches, and a relaxed outdoor lifestyle.",
+      "durationDays": 7,
+      "priceUSD": 2600,
+      "startDate": "2025-12-05",
+      "endDate": "2025-12-12",
+      "transportType": "Flight",
+      "rating": 4.8,
+      "highlights": [
+        "Sydney Opera House",
+        "Bondi Beach",
+        "Sydney Harbour Bridge",
+        "Royal Botanic Garden"
+      ]
+    },
+    {
+      "id": 14,
+      "cityName": "Istanbul",
+      "country": "Turkey",
+      "image": "/destinations/Tokio.jpg",
+      "description": "A transcontinental city rich in history, where the sounds and scents of Europe and Asia blend together.",
+      "durationDays": 5,
+      "priceUSD": 1400,
+      "startDate": "2025-05-08",
+      "endDate": "2025-05-13",
+      "transportType": "Flight",
+      "rating": 4.7,
+      "highlights": [
+        "Hagia Sophia",
+        "Blue Mosque",
+        "Grand Bazaar",
+        "Bosphorus Cruise"
+      ]
+    },
+    {
+      "id": 15,
+      "cityName": "Prague",
+      "country": "Czech Republic",
+      "image": "/destinations/Tokio.jpg",
+      "description": "The City of a Hundred Spires, a fairy-tale destination with a stunning Old Town and historic castle.",
+      "durationDays": 4,
+      "priceUSD": 1200,
+      "startDate": "2025-09-20",
+      "endDate": "2025-09-24",
+      "transportType": "Flight",
+      "rating": 4.6,
+      "highlights": [
+        "Prague Castle",
+        "Charles Bridge",
+        "Old Town Square",
+        "Astronomical Clock"
+      ]
+    },
+    {
+      "id": 16,
+      "cityName": "Beijing",
+      "country": "China",
+      "image": "/destinations/Tokio.jpg",
+      "description": "China's ancient capital, where imperial history meets modern ambition on a monumental scale.",
+      "durationDays": 6,
+      "priceUSD": 2000,
+      "startDate": "2025-04-15",
+      "endDate": "2025-04-21",
+      "transportType": "Flight",
+      "rating": 4.7,
+      "highlights": [
+        "Great Wall at Mutianyu",
+        "Forbidden City",
+        "Temple of Heaven",
+        "Summer Palace"
+      ]
+    }
+  ]
+}
