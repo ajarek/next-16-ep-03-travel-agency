@@ -2,6 +2,7 @@ import DestinationsTop from "@/components/destinations-top";
 import Features from "@/components/features-1";
 import HeroSection from "@/components/hero-section";
 import StepsToTrip from "@/components/steps-to-trip";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <Features/>
       <DestinationsTop/>
       <StepsToTrip/>
-      
+      <Testimonials/>
     </div>
   );
 }
