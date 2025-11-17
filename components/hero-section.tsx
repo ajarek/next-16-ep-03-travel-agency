@@ -114,8 +114,8 @@ export default function HeroSection() {
                 speedSegment={0.3}
                 as='h1'
                 className={` mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]`}
-              >
-                Travel, enjoy and live a new and full life
+              >Travel, enjoy and live a new, full life
+               
               </TextEffect>
               <TextEffect
                 per='line'
