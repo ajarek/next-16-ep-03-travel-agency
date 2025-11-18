@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
           >
         <HeroHeader/>
         {children}
+        <Footer/>
         </ThemeProvider>
       </body>
     </html>
