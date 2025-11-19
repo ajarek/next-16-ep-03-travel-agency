@@ -4,21 +4,9 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import type { Destination } from "@/types/destination"
 
-type Destination = {
-  id: number
-  cityName: string
-  country: string
-  image: string
-  description: string
-  durationDays: number
-  priceUSD: number
-  startDate: string
-  endDate: string
-  transportType: string
-  rating: number
-  highlights: string[]
-}
+
 
 const MotionCard = ({ destinations = [] }: { destinations: Destination[] }) => {
   return (

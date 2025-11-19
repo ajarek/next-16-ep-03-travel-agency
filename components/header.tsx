@@ -71,7 +71,7 @@ export const HeroHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                                className=" block duration-300 hover:underline underline-offset-4 transition-all">
                                                 <span>{item.name}</span>
                                             </Link>
                                         </li>
@@ -83,7 +83,7 @@ export const HeroHeader = () => {
                                     asChild
                                     
                                     size="lg"
-                                    className={' rounded-xl shadow-sm   '+cn(isScrolled && 'lg:hidden')}>
+                                    className={'w-fit rounded-xl shadow-sm   '+cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#">
                                         <span className='hover:scale-120 transition delay-200'>Login</span>
                                     </Link>
@@ -92,7 +92,7 @@ export const HeroHeader = () => {
                                     asChild
                                     
                                     size="lg"
-                                    className={' rounded-xl shadow-sm  '+cn(isScrolled && 'lg:hidden')}>
+                                    className={'w-fit rounded-xl shadow-sm  '+cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#">
                                         <span className='hover:scale-120 transition delay-200'>Sign Up</span>
                                     </Link>

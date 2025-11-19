@@ -1,5 +1,5 @@
 import destinations from '@/data/destinations.json'
-import MotionCard from './card-destination'
+import MotionCard from './motion-card'
 
 const DestinationsTop =async () => {
    'use cache'
