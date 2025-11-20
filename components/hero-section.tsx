@@ -46,7 +46,7 @@ export default function HeroSection() {
             className='mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32'
           >
             <Image
-              src='https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120'
+              src='/night-background.png'
               alt='background'
               className='hidden size-full dark:block'
               width='3276'
@@ -114,8 +114,8 @@ export default function HeroSection() {
                 speedSegment={0.3}
                 as='h1'
                 className={` mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]`}
-              >Travel, enjoy and live a new, full life
-               
+              >
+                Travel, enjoy and live a new, full life
               </TextEffect>
               <TextEffect
                 per='line'

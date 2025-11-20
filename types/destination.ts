@@ -12,4 +12,5 @@ export type Destination = {
   rating: number
   highlights: string[]
   quantity?: number
+  userName: string
 }

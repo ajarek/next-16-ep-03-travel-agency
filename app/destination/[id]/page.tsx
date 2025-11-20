@@ -10,17 +10,18 @@ const Destination = ({ params }: { params: Promise<{ id: string }> }) => {
   const destinationId = destinations.trips.find(
     (destination) => destination.id === parseInt(id)
   )
+  const userName = "John Doe" 
   const [count, setCount] = useState(1)
 
   if (!destinationId) {
     return (
-      <div className='w-full text-center text-3xl text-primary pt-28 px-8'>
+      <div className='min-h-screen w-full text-center text-3xl text-primary pt-28 px-8'>
         Destination not found !
       </div>
     )
   }
   return (
-    <div className='w-full grid grid-cols-1 sm:grid-cols-2 gap-4 pt-28 px-8 bg-transparent '>
+    <div className='min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 gap-4 pt-28 px-8 bg-transparent '>
       <div className=''>
         <Image
           src={destinationId?.image || ""}
@@ -102,6 +103,7 @@ const Destination = ({ params }: { params: Promise<{ id: string }> }) => {
           rating={destinationId?.rating || 0}
           highlights={destinationId?.highlights || []}
           quantity={count}
+          userName={userName || ""}
         />
       </div>
     </div>

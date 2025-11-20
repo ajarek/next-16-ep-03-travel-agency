@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
 import ModeToggle from './mode-toggle'
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 
 
 const menuItems = [
@@ -79,32 +80,17 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    
-                                    size="lg"
-                                    className={'w-fit rounded-xl shadow-sm   '+cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span className='hover:scale-120 transition delay-200'>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    
-                                    size="lg"
-                                    className={'w-fit rounded-xl shadow-sm  '+cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span className='hover:scale-120 transition delay-200'>Sign Up</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
-                                        <span>Get Started</span>
-                                    </Link>
-                                </Button>
+                                <SignedOut>
+              <SignInButton />
+              <SignUpButton>
+                <button className="bg-[#6c47ff] text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
                             </div>
                             <ModeToggle/>
                         </div>

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import Toast from "./ui/toast"
 import { Button } from './ui/button'
 
-const ButtonAddTrip = ({cityName, country, image, description, durationDays, priceUSD, startDate, endDate, transportType, rating, highlights, quantity, 
+const ButtonAddTrip = ({cityName, country, image, description, durationDays, priceUSD, startDate, endDate, transportType, rating, highlights, userName, quantity, 
   
 }: {
   id: number
@@ -21,11 +21,12 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
   transportType: string
   rating: number
   highlights: string[]
+  userName: string
   quantity?: number
 }) => {
 
   const router = useRouter()
-  const { addTripToCart, items } = useTripStore()
+  const { addTripToCart } = useTripStore()
    const [toast, setToast] = useState<{ message: string; variant?: "success" | "error" } | null>(null)
    function showToast(message: string, variant: "success" | "error" = "success") {
     setToast({ message, variant })
@@ -50,6 +51,7 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
           transportType,
           rating,
           highlights,
+          userName,
           quantity,
         })
        
