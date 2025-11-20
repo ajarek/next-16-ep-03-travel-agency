@@ -4,13 +4,14 @@ import { Minus, Plus } from "lucide-react"
 import destinations from "@/data/destinations.json"
 import Image from "next/image"
 import { use, useState } from "react"
+import { useUser } from "@clerk/nextjs"
 
 const Destination = ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = use(params)
   const destinationId = destinations.trips.find(
     (destination) => destination.id === parseInt(id)
   )
-  const userName = "John Doe" 
+  const { user } = useUser()
   const [count, setCount] = useState(1)
 
   if (!destinationId) {
@@ -103,7 +104,7 @@ const Destination = ({ params }: { params: Promise<{ id: string }> }) => {
           rating={destinationId?.rating || 0}
           highlights={destinationId?.highlights || []}
           quantity={count}
-          userName={userName || ""}
+          userName={user?.fullName || ""}
         />
       </div>
     </div>
