@@ -13,4 +13,5 @@ export type Destination = {
   highlights: string[]
   quantity?: number
   userName?: string
+  payment?: boolean
 }

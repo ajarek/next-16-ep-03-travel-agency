@@ -1,4 +1,5 @@
-import { currentUser } from "@clerk/nextjs/server"
+import {auth, currentUser } from "@clerk/nextjs/server"
+import { RedirectToSignIn } from "@clerk/nextjs"
 import {
   Card,
   CardContent,
@@ -18,8 +19,14 @@ import {
 } from "@/components/ui/table"
 import { CreditCard, Plus, History, Wallet } from "lucide-react"
 
-export default async function PaymentsPage() {
+export default async function PaymentsPage({searchParams,}: {searchParams:  Promise<{ price: number|string, quantity: number| string }> }) {
+  const { price, quantity } = await searchParams
   const user = await currentUser()
+  const { isAuthenticated } = await auth()
+
+  if (!isAuthenticated) {
+    return <RedirectToSignIn />
+  }
 
   // Mock data for transaction history
   const transactions = [
@@ -88,7 +95,7 @@ export default async function PaymentsPage() {
                 <label className='text-sm font-medium leading-none'>
                   Current Balance
                 </label>
-                <p className='text-2xl font-bold'>$0.00</p>
+                <p className='text-2xl font-bold'>$ {(+price * +quantity).toFixed(2)}</p>
               </div>
               <Button size='sm'>Pay Balance</Button>
             </div>

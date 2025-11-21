@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import Toast from "./ui/toast"
 import { Button } from './ui/button'
 
-const ButtonAddTrip = ({cityName, country, image, description, durationDays, priceUSD, startDate, endDate, transportType, rating, highlights, userName, quantity, 
+const ButtonAddTrip = ({cityName, country, image, description, durationDays, priceUSD, startDate, endDate, transportType, rating, highlights, userName, quantity, payment
   
 }: {
   id: number
@@ -23,6 +23,7 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
   highlights: string[]
   userName: string
   quantity?: number
+  payment?: boolean
 }) => {
 
   const router = useRouter()
@@ -53,9 +54,10 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
           highlights,
           userName,
           quantity,
+          payment
         })
        
-        router.push('/payments')
+        router.push(`/payments?price=${priceUSD}&quantity=${quantity}`)
         showToast("Add a trip successfully", "success")
       }}
       aria-label='Add to cart'

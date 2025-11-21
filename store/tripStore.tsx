@@ -25,6 +25,13 @@ export const useTripStore = create<ItemState>()(
           items: [item, ...state.items],
         })),
 
+      updatePayment: (id: number, payment: boolean) =>
+        set((state) => ({
+          items: state.items.map((item) =>
+            item.id === id ? { ...item, payment } : item
+          ),
+        })),
+
       removeTripFromCart: (id) =>
         set((state) => ({
           items: state.items.filter((item) => item.id !== id),

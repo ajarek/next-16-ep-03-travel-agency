@@ -105,6 +105,7 @@ const Destination = ({ params }: { params: Promise<{ id: string }> }) => {
           highlights={destinationId?.highlights || []}
           quantity={count}
           userName={user?.fullName || ""}
+          payment={false}
         />
       </div>
     </div>
