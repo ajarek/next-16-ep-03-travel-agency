@@ -55,7 +55,7 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
           quantity,
         })
        
-        router.push('/bookings')
+        router.push('/payments')
         showToast("Add a trip successfully", "success")
       }}
       aria-label='Add to cart'
