@@ -13,6 +13,7 @@ type ItemState = {
   increment: (id: number) => void
   decrement: (id: number) => void
   removeAllFromCart: () => void
+  updatePayment: (id: number, payment: boolean) => void
 }
 
 export const useTripStore = create<ItemState>()(

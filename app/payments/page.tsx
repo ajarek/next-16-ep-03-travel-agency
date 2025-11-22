@@ -1,4 +1,5 @@
-import {auth, currentUser } from "@clerk/nextjs/server"
+'use client'
+import {useUser } from "@clerk/nextjs"
 import { RedirectToSignIn } from "@clerk/nextjs"
 import {
   Card,
@@ -17,14 +18,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import ButtonPayBalance from "@/components/button-pay-balance"
+import { use } from "react"
 import { CreditCard, Plus, History, Wallet } from "lucide-react"
+import {useTripStore} from "@/store/tripStore"
 
-export default async function PaymentsPage({searchParams,}: {searchParams:  Promise<{ price: number|string, quantity: number| string }> }) {
-  const { price, quantity } = await searchParams
-  const user = await currentUser()
-  const { isAuthenticated } = await auth()
+export default  function PaymentsPage({searchParams,}: {searchParams:  Promise<{ price: number|string, quantity: number| string, id: number }> }) {
+  const { price, quantity, id } = use(searchParams) 
+  const { isSignedIn, user, isLoaded } = useUser()
+  const {items} = useTripStore()
+  const totalId = items.find((item) => item.id === +id)
+  const total = (totalId?.priceUSD ?? 0 )* (totalId?.quantity ?? 0)
 
-  if (!isAuthenticated) {
+if (!isLoaded) {
+    return <div>Loading...</div>
+  }
+  if (!isSignedIn) {
     return <RedirectToSignIn />
   }
 
@@ -95,9 +104,9 @@ export default async function PaymentsPage({searchParams,}: {searchParams:  Prom
                 <label className='text-sm font-medium leading-none'>
                   Current Balance
                 </label>
-                <p className='text-2xl font-bold'>$ {(+price * +quantity).toFixed(2)}</p>
+                <p className='text-2xl font-bold'>$ {total.toFixed(2)}</p>
               </div>
-              <Button size='sm'>Pay Balance</Button>
+              <ButtonPayBalance id={+id} />
             </div>
           </CardContent>
         </Card>

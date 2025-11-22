@@ -165,7 +165,7 @@ export default function HeroSection() {
                     size='lg'
                     className='rounded-xl px-5 text-base hover:bg-secondary hover:text-secondary-foreground transition-all duration-300'
                   >
-                    <Link href='#link'>
+                    <Link href='/destinations'>
                       <span className='text-nowrap'>Find out more</span>
                     </Link>
                   </Button>
@@ -179,7 +179,7 @@ export default function HeroSection() {
                     size='lg'
                     className='rounded-xl px-5 text-base hover:bg-secondary hover:text-secondary-foreground transition-all duration-300'
                   >
-                    <Link href='#link'>
+                    <Link href='/video'>
                       <span className='p-2 bg-primary text-primary-foreground rounded-full'>
                         <Play />
                       </span>

@@ -16,8 +16,8 @@ import {
 
 const menuItems = [
   { name: "Destinations", href: "/destinations" },
-  { name: "Hotels", href: "/hotels" },
   { name: "Flights", href: "/flights" },
+  { name: "Payments", href: "/payments" },
   { name: "Bookings", href: "/bookings" },
 ]
 

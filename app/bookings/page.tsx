@@ -33,6 +33,7 @@ const Bookings = () => {
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {items
           .filter((item) => item.userName === user?.fullName)
+          .filter((item) => item.payment === true)
           .map((item) => (
             <div key={item.id} className='relative border-2 rounded-xl shadow-lg p-4'>
               <h2 className='text-xl font-semibold'>
