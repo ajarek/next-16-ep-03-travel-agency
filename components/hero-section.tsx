@@ -88,7 +88,7 @@ export default function HeroSection() {
                 }}
               >
                 <Link
-                  href='#link'
+                  href='#best-destinations'
                   className='bg-secondary text-secondary-foreground hover:bg-secondary/50 dark:hover:border-t-border  group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950'
                 >
                   <span className='text-black text-sm'>

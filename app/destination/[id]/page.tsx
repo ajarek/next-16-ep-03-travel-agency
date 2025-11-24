@@ -46,6 +46,10 @@ const Destination = ({ params }: { params: Promise<{ id: string }> }) => {
           <span className='text-gray-500 mr-2'>description:</span>
           {destinationId?.description}
         </p>
+        <p className=''>
+          <span className='text-gray-500 mr-2'>hotel:</span>
+          ⭐⭐⭐⭐⭐
+        </p>
         <p>
           <span className='text-gray-500 mr-2'>destination Id:</span> 000{id}
         </p>
