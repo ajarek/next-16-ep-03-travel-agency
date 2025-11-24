@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Suspense } from "react"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { HeroHeader } from "@/components/header"
@@ -45,9 +44,8 @@ export default function RootLayout({
           >
             <HeroHeader />
             {children}
-            <Suspense fallback={null}>
-              <Footer />
-            </Suspense>
+
+            <Footer />
           </ThemeProvider>
         </body>
       </html>

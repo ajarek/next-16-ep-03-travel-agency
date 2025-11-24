@@ -2,7 +2,7 @@ import destinations from '@/data/destinations.json'
 import MotionCard from './motion-card'
 
 const DestinationsTop =async () => {
-   'use cache'
+   
   const destinationsFilter = destinations.trips.filter((destination)=>destination.id<=3)
   return (
     <section id='best-destinations'  className='w-full  py-8 md:py-16 px-8 bg-transparent '>

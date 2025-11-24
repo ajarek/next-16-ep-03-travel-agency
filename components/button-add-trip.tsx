@@ -27,7 +27,7 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
 }) => {
 
   const router = useRouter()
-  const { addTripToCart } = useTripStore()
+  const { addTripToCart, items } = useTripStore()
    const [toast, setToast] = useState<{ message: string; variant?: "success" | "error" } | null>(null)
    function showToast(message: string, variant: "success" | "error" = "success") {
     setToast({ message, variant })
@@ -38,7 +38,10 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
     <div className='w-full flex justify-end'>
     <Button
       onClick={() => {
-        
+         if (items.some((i) => i.id === id)) {
+          showToast("This trip is already in your booking", "error")
+          return
+        }
         addTripToCart({
           id:id,
           cityName,
@@ -56,9 +59,8 @@ const ButtonAddTrip = ({cityName, country, image, description, durationDays, pri
           quantity,
           payment
         })
-       
+          showToast("Add a trip successfully", "success")
         router.push(`/payments?id=${id}`)
-        showToast("Add a trip successfully", "success")
       }}
       aria-label='Add to cart'
       size={'lg'}

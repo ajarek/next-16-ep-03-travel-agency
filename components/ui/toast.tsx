@@ -16,7 +16,7 @@ interface ToastProps {
 
 const variantClasses: Record<Variant, string> = {
   success: "bg-emerald-600 text-white",
-  error: "bg-destructive text-white",
+  error: "bg-red-600 text-white",
 }
 
 export default function Toast({ message, variant = "success", onClose }: ToastProps) {

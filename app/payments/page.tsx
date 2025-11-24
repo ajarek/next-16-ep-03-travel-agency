@@ -1,5 +1,5 @@
-'use client'
-import {useUser } from "@clerk/nextjs"
+"use client"
+import { useUser } from "@clerk/nextjs"
 import { RedirectToSignIn } from "@clerk/nextjs"
 import {
   Card,
@@ -19,24 +19,49 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import ButtonPayBalance from "@/components/button-pay-balance"
-import { use } from "react"
+import { use, useState } from "react"
 import { CreditCard, Plus, History, Wallet } from "lucide-react"
-import {useTripStore} from "@/store/tripStore"
+import { useTripStore } from "@/store/tripStore"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
-export default  function PaymentsPage({searchParams,}: {searchParams:  Promise<{ price: number|string, quantity: number| string, id: number }> }) {
-  const { price, quantity, id } = use(searchParams) 
+export default function PaymentsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    price: number | string
+    quantity: number | string
+    id: number
+  }>
+}) {
+  const { price, quantity, id } = use(searchParams)
   const { isSignedIn, user, isLoaded } = useUser()
-  const {items} = useTripStore()
+  const { items } = useTripStore()
   const totalId = items.find((item) => item.id === +id)
-  const total = (totalId?.priceUSD ?? 0 )* (totalId?.quantity ?? 0)
+  const total = (totalId?.priceUSD ?? 0) * (totalId?.quantity ?? 0)
+  const [cardNumber, setCardNumber] = useState<string>("1234 5678 9012 3456")
+  const [expirationDate, setExpirationDate] = useState<string>("12/24")
+  const [cvv, setCvv] = useState<string>("123")
 
-if (!isLoaded) {
+  if (!isLoaded) {
     return <div>Loading...</div>
   }
   if (!isSignedIn) {
     return <RedirectToSignIn />
   }
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    setCardNumber(formData.get("cardNumber") as string)
+    setExpirationDate(formData.get("expirationDate") as string)
+    setCvv(formData.get("cvv") as string)
+  }
   // Mock data for transaction history
   const transactions = [
     {
@@ -124,18 +149,59 @@ if (!isLoaded) {
             <div className='flex items-center space-x-4 rounded-md border p-4'>
               <CreditCard className='h-6 w-6 text-muted-foreground' />
               <div className='flex-1 space-y-1'>
-                <p className='text-sm font-medium leading-none'>
-                  Visa ending in 4242
+                <p className='text-sm text-muted-foreground'>{cardNumber}</p>
+                <p className='text-sm text-muted-foreground'>
+                  {expirationDate}
                 </p>
-                <p className='text-sm text-muted-foreground'>Expires 12/24</p>
+                <p className='text-sm text-muted-foreground'>{cvv}</p>
               </div>
-              <Button variant='outline' size='sm'>
-                Edit
-              </Button>
             </div>
-            <Button className='w-full'>
-              <Plus className='mr-2 h-4 w-4' /> Add Payment Method
-            </Button>
+            <Popover>
+              <PopoverTrigger>
+                <div className='flex items-center gap-2 cursor-pointer  py-2 px-4 rounded-sm bg-primary text-primary-foreground hover:bg-primary/80 transition-colors'>
+                  <Plus className='mr-2 h-4 w-4' />
+                  Add Payment Method
+                </div>
+              </PopoverTrigger>
+              <PopoverContent>
+                <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
+                  <div className='flex flex-col gap-2'>
+                    <Label>Card Number</Label>
+                    <Input
+                      type='text'
+                      name='cardNumber'
+                      placeholder='Enter your card number'
+                      required
+                      pattern='^(?:\d{4} ){3}\d{4}$'
+                    />
+                  </div>
+
+                  <div className='flex flex-col gap-2'>
+                    <Label>Expiration Date</Label>
+                    <Input
+                      type='text'
+                      name='expirationDate'
+                      placeholder='Enter your expiration date MM/YYYY'
+                      required
+                      pattern='^(0[1-9]|1[0-2])\/20[2-9][5-9]$'
+                    />
+                  </div>
+                  <div className='flex flex-col gap-2'>
+                    <Label>CVV</Label>
+                    <Input
+                      type='text'
+                      name='cvv'
+                      placeholder='Enter your CVV'
+                      required
+                      pattern='^[0-9]{3}$'
+                    />
+                  </div>
+                  <Button type='submit' className='w-full'>
+                    Add Payment Method
+                  </Button>
+                </form>
+              </PopoverContent>
+            </Popover>
           </CardContent>
         </Card>
       </div>
