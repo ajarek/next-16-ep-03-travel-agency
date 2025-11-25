@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/table"
 import ButtonPayBalance from "@/components/button-pay-balance"
 import { use, useState } from "react"
-import { CreditCard, Plus, History, Wallet } from "lucide-react"
+import { CreditCard, Plus, History, Wallet, Trash2 } from "lucide-react"
 import { useTripStore } from "@/store/tripStore"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -29,6 +29,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { useTransactionStore } from "@/store/transactionStore"
 
 export default function PaymentsPage({
   searchParams,
@@ -42,6 +43,7 @@ export default function PaymentsPage({
   const { price, quantity, id } = use(searchParams)
   const { isSignedIn, user, isLoaded } = useUser()
   const { items } = useTripStore()
+  const { operations, removeTransaction } = useTransactionStore()
   const totalId = items.find((item) => item.id === +id)
   const total = (totalId?.priceUSD ?? 0) * (totalId?.quantity ?? 0)
   const [cardNumber, setCardNumber] = useState<string>("1234 5678 9012 3456")
@@ -62,30 +64,6 @@ export default function PaymentsPage({
     setExpirationDate(formData.get("expirationDate") as string)
     setCvv(formData.get("cvv") as string)
   }
-  // Mock data for transaction history
-  const transactions = [
-    {
-      id: "TRX-9871",
-      date: "2024-05-15",
-      description: "Trip to Paris",
-      amount: "$1,200.00",
-      status: "Completed",
-    },
-    {
-      id: "TRX-9872",
-      date: "2024-06-02",
-      description: "Flight Upgrade",
-      amount: "$150.00",
-      status: "Completed",
-    },
-    {
-      id: "TRX-9873",
-      date: "2024-06-10",
-      description: "Travel Insurance",
-      amount: "$85.00",
-      status: "Pending",
-    },
-  ]
 
   return (
     <div className='container mx-auto py-10 px-4 space-y-8 pt-28'>
@@ -170,7 +148,7 @@ export default function PaymentsPage({
                     <Input
                       type='text'
                       name='cardNumber'
-                      placeholder='Enter your card number'
+                      placeholder='Card number: 1234 5678 9012 3456'
                       required
                       pattern='^(?:\d{4} ){3}\d{4}$'
                     />
@@ -197,7 +175,7 @@ export default function PaymentsPage({
                     />
                   </div>
                   <Button type='submit' className='w-full'>
-                    Add Payment Method
+                    Add Credit Card
                   </Button>
                 </form>
               </PopoverContent>
@@ -220,23 +198,37 @@ export default function PaymentsPage({
             <TableHeader>
               <TableRow>
                 <TableHead>Transaction ID</TableHead>
-                <TableHead>Date</TableHead>
-                <TableHead>Description</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className='text-right'>Amount</TableHead>
+                <TableHead>City</TableHead>
+                <TableHead>Start Date</TableHead>
+                <TableHead>End Date</TableHead>
+                <TableHead>Price</TableHead>
+                <TableHead className=''>Action</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {transactions.map((transaction) => (
-                <TableRow key={transaction.id}>
+              {operations.map((operation) => (
+                <TableRow key={operation.id}>
                   <TableCell className='font-medium'>
-                    {transaction.id}
+                    000{operation.id}
                   </TableCell>
-                  <TableCell>{transaction.date}</TableCell>
-                  <TableCell>{transaction.description}</TableCell>
-                  <TableCell>{transaction.status}</TableCell>
-                  <TableCell className='text-right'>
-                    {transaction.amount}
+                  <TableCell>{operation.cityName}</TableCell>
+                  <TableCell>{operation.startDate}</TableCell>
+                  <TableCell>{operation.endDate}</TableCell>
+                  <TableCell>
+                    $
+                    {(operation.priceUSD * (operation.quantity || 1)).toFixed(
+                      2
+                    )}
+                  </TableCell>
+                  <TableCell className=''>
+                    <Button
+                      variant='delete'
+                      color='white'
+                      className='w-8 h-8 rounded-full flex items-center justify-center '
+                      onClick={() => removeTransaction(operation.id)}
+                    >
+                      <Trash2 className='' />
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}

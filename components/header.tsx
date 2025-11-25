@@ -101,7 +101,7 @@ export const HeroHeader = () => {
                     <Button className='bg-foreground text-background hover:bg-foreground/50 rounded-xl font-medium text-sm sm:text-base  cursor-pointer'>
                       Sign In
                     </Button>
-                  </SignInButton> 
+                  </SignInButton>
                   <SignUpButton>
                     <Button className='rounded-xl font-medium text-sm sm:text-base  cursor-pointer'>
                       Sign Up

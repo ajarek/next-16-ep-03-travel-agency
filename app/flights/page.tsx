@@ -15,15 +15,16 @@ const Flights = () => {
           className='rounded-2xl'
         />
         <motion.div
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 1 }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 3,
-                      scale: { type: "spring", visualDuration: 1, bounce: 0.25 },
-                    }}
-                   className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-4'>
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 1 }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 3,
+            scale: { type: "spring", visualDuration: 1, bounce: 0.25 },
+          }}
+          className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-4'
+        >
           <h1>Flights</h1>
           <p className='text-xl'>
             Search for flights to your desired destination

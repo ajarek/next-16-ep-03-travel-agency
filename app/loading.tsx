@@ -1,4 +1,4 @@
-import { LoaderPinwheel } from 'lucide-react'
+import { LoaderPinwheel } from "lucide-react"
 
 const Loading = () => {
   return (

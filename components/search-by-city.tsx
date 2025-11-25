@@ -1,16 +1,16 @@
-'use client'
+"use client"
 
-import { useRouter, useSearchParams } from 'next/navigation'
-import React from 'react'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Search } from 'lucide-react'
+import { useRouter, useSearchParams } from "next/navigation"
+import React from "react"
+import { Button } from "./ui/button"
+import { Input } from "./ui/input"
+import { Search } from "lucide-react"
 interface SearchProps {
   query: string
 }
 
 const FormSearchTitle = ({ query }: SearchProps) => {
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = React.useState("")
   const searchParams = useSearchParams()
   const { replace } = useRouter()
 
@@ -24,9 +24,9 @@ const FormSearchTitle = ({ query }: SearchProps) => {
     }
     try {
       replace(`/destinations?${params.toString()}`)
-      setValue('')
+      setValue("")
     } catch (error) {
-      console.error('Failed to replace URL parameters:', error)
+      console.error("Failed to replace URL parameters:", error)
     }
   }
 
@@ -41,15 +41,9 @@ const FormSearchTitle = ({ query }: SearchProps) => {
           onChange={(e) => setValue(e.target.value)}
           defaultValue={searchParams.get(query)?.toString()}
         />
-        <Search
-         
-          className='absolute left-6 top-1/2 transform -translate-y-1/2 '
-        />
+        <Search className='absolute left-6 top-1/2 transform -translate-y-1/2 ' />
       </div>
-      <Button
-        className='cursor-pointer'
-        onClick={() => handleSearch(value)}
-      >
+      <Button className='cursor-pointer' onClick={() => handleSearch(value)}>
         Search
       </Button>
     </div>

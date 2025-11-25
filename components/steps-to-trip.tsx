@@ -12,7 +12,7 @@ const StepsToTrip = () => {
         </h1>
         <ul className='space-y-8'>
           <li>
-            <p className="w-8 h-8 flex items-center justify-center dark:bg-secondary bg-primary text-black rounded-xl">
+            <p className='w-8 h-8 flex items-center justify-center dark:bg-secondary bg-primary text-black rounded-xl'>
               <SquareCheckBig />
             </p>
             <h2 className='text-2xl font-semibold'>Choose DEstination</h2>
@@ -22,7 +22,7 @@ const StepsToTrip = () => {
             </p>
           </li>
           <li>
-            <p className="w-8 h-8 flex items-center justify-center dark:bg-secondary bg-primary text-black rounded-xl">
+            <p className='w-8 h-8 flex items-center justify-center dark:bg-secondary bg-primary text-black rounded-xl'>
               <HandCoins />
             </p>
             <h2 className='text-2xl font-semibold'>Make Payment</h2>
@@ -31,7 +31,7 @@ const StepsToTrip = () => {
             </p>
           </li>
           <li>
-            <p className="w-8 h-8 flex items-center justify-center dark:bg-secondary bg-primary text-black rounded-xl">
+            <p className='w-8 h-8 flex items-center justify-center dark:bg-secondary bg-primary text-black rounded-xl'>
               <Plane />
             </p>
             <h2 className='text-2xl font-semibold'>

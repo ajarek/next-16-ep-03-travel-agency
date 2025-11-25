@@ -1,8 +1,7 @@
-import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { create } from "zustand"
+import { persist, createJSONStorage } from "zustand/middleware"
 
 import type { Destination } from "@/types/destination"
-
 
 type ItemState = {
   items: Destination[]
@@ -41,7 +40,10 @@ export const useTripStore = create<ItemState>()(
       removeAllFromCart: () => set({ items: [] }),
 
       total: () =>
-        get().items.reduce((acc, item) => acc + item.priceUSD * (item.quantity ?? 0), 0),
+        get().items.reduce(
+          (acc, item) => acc + item.priceUSD * (item.quantity ?? 0),
+          0
+        ),
       removeAll: () => set({ items: [] }),
 
       increment: (id: number) =>
@@ -50,7 +52,9 @@ export const useTripStore = create<ItemState>()(
           .map(() =>
             set((state) => ({
               items: state.items.map((item) =>
-                item.id === id ? { ...item, quantity: (item.quantity ?? 0) + 1 } : item
+                item.id === id
+                  ? { ...item, quantity: (item.quantity ?? 0) + 1 }
+                  : item
               ),
             }))
           ),
@@ -71,6 +75,6 @@ export const useTripStore = create<ItemState>()(
           ),
     }),
 
-    { name: 'tripStore', storage: createJSONStorage(() => localStorage) }
+    { name: "tripStore", storage: createJSONStorage(() => localStorage) }
   )
 )

@@ -6,8 +6,6 @@ import Link from "next/link"
 import { Button } from "./ui/button"
 import type { Destination } from "@/types/destination"
 
-
-
 const MotionCard = ({ destinations = [] }: { destinations: Destination[] }) => {
   return (
     <div className=' grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 '>
@@ -34,7 +32,7 @@ const MotionCard = ({ destinations = [] }: { destinations: Destination[] }) => {
               </CardHeader>
 
               <CardContent>
-                <p className='text-lg'>{description.slice(0, 80) + '...'}</p>
+                <p className='text-lg'>{description.slice(0, 80) + "..."}</p>
                 <div className='flex items-center justify-between'>
                   <p className='mt-2 text-xl font-semibold'>{priceUSD} USD </p>
                   <p className='text-md text-muted-foreground'>
@@ -43,7 +41,11 @@ const MotionCard = ({ destinations = [] }: { destinations: Destination[] }) => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button asChild size='lg' className='w-full bg-secondary text-secondary-foreground text-2xl hover:bg-secondary/50 dark:hover:border-t-border  group mx-auto rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950'>
+                <Button
+                  asChild
+                  size='lg'
+                  className='w-full bg-secondary text-secondary-foreground text-2xl hover:bg-secondary/50 dark:hover:border-t-border  group mx-auto rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950'
+                >
                   <Link href={`/destination/${id}`}>I choose this trip</Link>
                 </Button>
               </CardFooter>

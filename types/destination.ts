@@ -15,3 +15,12 @@ export type Destination = {
   userName?: string
   payment?: boolean
 }
+export type Transaction = {
+  id: number
+  cityName: string
+  startDate: string
+  endDate: string
+  userName: string
+  priceUSD: number
+  quantity?: number
+}
